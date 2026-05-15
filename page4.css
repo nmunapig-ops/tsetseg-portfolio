@@ -1,0 +1,169 @@
+:root { 
+  --black:        #080808;
+  --white:        #ffffff;
+  --gray-dim:     rgba(255, 255, 255, 0.50);
+  --card-bg:      rgba(255, 255, 255, 0.10);
+  --card-border:  rgba(255, 255, 255, 0.14);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Cormorant Garamond', serif;
+  --font-gothic:  'MedievalSharp', 'Palatino Linotype', serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--black);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  height: 110px;
+}
+
+.nav-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.menu-icon span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.exit-icon {
+  font-size: 26px;
+  color: var(--white);
+  font-family: var(--font-body);
+}
+
+.nav-title {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: .18em;
+  opacity: 0;
+  animation: fadeIn .7s ease forwards .1s;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 110px;
+  height: 52px;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gray-dim);
+  padding: 7px 0;
+  transition: color .25s;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.nav-link.active {
+  color: var(--white);
+  border: 1.5px solid var(--white);
+  border-radius: 50px;
+  padding: 7px 26px;
+}
+.about-section {
+  text-align: center;
+  padding-top: 50px;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .3s;
+}
+
+.about-title {
+  font-family: var(--font-body);
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: .04em;
+  margin-bottom: 18px;
+}
+
+.about-text {
+  font-family: var(--font-gothic);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .06em;
+  margin-bottom: 40px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+
+  justify-content: center;   /* ГОЛД АВЧИРНА */
+  align-items: center;
+
+  gap: 25px;
+  margin: 0 auto 60px auto;
+}
+
+.gallery div {
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  transition: 0.4s;
+  cursor: pointer;
+  display: block;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
